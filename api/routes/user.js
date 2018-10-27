@@ -32,14 +32,18 @@ router.post('/', (req, res) => {
     },
   });
 
-  user.save(err => {
-    if (err) res.status(500).json({ error: err.message })
+  res.status(200).json({
+    message: 'This endpoint is working  '
+  })
 
-    res.status(200).json({
-      message: 'User created',
-      createdUser: user,
-    });
-  });
+  // user.save(err => {
+  //   if (err) res.status(500).json({ error: err.message })
+
+  //   res.status(200).json({
+  //     message: 'User created',
+  //     createdUser: user,
+  //   });
+  // });
 });
 
 router.get('/:userId', async (req, res) => {
